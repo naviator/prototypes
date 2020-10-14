@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: a
+  labels:
+    app: a
+spec:
+  containers:
+    - name: a
+      image: conanio/gcc7
+      command: ["sleep", "infinity"]
+      volumeMounts:
+      - mountPath: /dev/shm
+        name: dshm
+    - name: b
+      image: conanio/gcc7
+      command: ["sleep", "infinity"]
+      volumeMounts:
+      - mountPath: /dev/shm
+        name: dshm
+  # https://github.com/kubernetes/kubernetes/issues/28272#issuecomment-555920416
+  volumes:
+  - name: dshm
+    emptyDir:
+      medium: Memory
+      
