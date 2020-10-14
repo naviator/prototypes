@@ -12,3 +12,6 @@ b_test:
 
 deploy:
 	kubectl apply -f ipcs.yml
+
+delete:
+	kubectl delete -f ipcs.yml
