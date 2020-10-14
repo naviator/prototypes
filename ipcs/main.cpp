@@ -22,7 +22,7 @@ void sys_err(string s) {
 }
 
 static char letters[] = {'a', 'b', 'c'};
-static constexpr int MAX_SIZE = 100*1024*1024;
+static constexpr int MAX_SIZE = 1024*1024;
 
 void generate() {
 	// ftok to generate unique key 
